@@ -1,0 +1,53 @@
+<div *ngIf="display" class="container">
+    <div *ngFor="let item of cart; let i = index">
+        <div class="row cart-data position-relative">
+            <button class="close-icon" (click)="removeItem(i)" aria-label="Close">
+                &times;
+            </button>
+            <div class="col-md-6  col-lg-4 col-sm-12">
+                <img [src]="item.image" class="card-img-top" alt="{{ item.name }}">
+            </div>
+            <div class="col-md-6 col-lg-4  col-sm-12">
+                <p>{{ item.name }} <br>₹{{ item.price }} </p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-sm-12 quantity-update">
+                <p class="quantity-controls">
+                    <span class="change-quantity" (click)="updateQuantity(i, -1)">-</span>
+                    <span class="item-quantity">{{ item.quantity }}</span>
+                    <span class="change-quantity" (click)="updateQuantity(i, 1)">+</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row total-cart">
+        <div class="col-6">
+            <p>Subtotal:</p>
+        </div>
+        <div class="col-6">
+            <p>₹{{ total }}</p>
+        </div>
+    </div>
+    <div class="row total-cart">
+        <div class="col-6">
+            <p>Discount: </p>
+        </div>
+        <div class="col-6">
+            <p>₹{{ discount }}</p>
+        </div>
+    </div>
+    <div class="row total-cart" style="color:rgb(232, 232, 58)">
+        <div class="col-6">
+            <p>Total: </p>
+        </div>
+        <div class="col-6">
+            <p> ₹{{ maintotal }}</p>
+        </div>
+    </div>
+    <div class="row total-cart">
+        <button class="btn buy-now" (click)="buyNow()">Buy Now</button>
+    </div>
+</div>
+
+<div *ngIf="!display" style="text-align: center; margin-top: 190px;">
+    <h5 style="color:red">No Items Found <i class="fa-solid fa-database"></i></h5>
+</div>

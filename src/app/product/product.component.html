@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row card prd-card">
+        <div class="col-4 card-img-top">
+            <img class="card-img-top" [src]="product?.image" alt="{{ product?.name }}">
+            <span class="view-icon">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3">
+            <h5 style="font-weight: 600;">{{ product?.name }}</h5>
+        </div>
+        <div class="col-3">
+            <p style="font-weight: 600;">Price: ₹{{ product?.price }}</p>
+        </div>
+    </div>
+    <p style="color:green">In Stock</p>
+    <div class="row" style="color:green">
+        <div class="col-4">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3">
+            <h5 style="font-weight: 600;">product Quantity: </h5>
+        </div>
+        <div class="col-3 quantity" style="font-weight: 600;">
+            <span (click)="decreaseQuantity()">-</span>
+            {{ product?.quantity }}
+            <span (click)="increaseQuantity()">+</span>
+        </div>
+    </div>
+        <button class="btn" style="background: rgb(232, 232, 58); font-weight: bold;" (click)="addToCart(product)">Add to Cart</button>
+        <h5 class="mt-4" style="font-weight: 600;">Product Details</h5>
+        <p>There are many kinds of crave worthy foods. From foods that are sweet and salty to savory, there is one crave-able item that sure gets consumers talking. National Cattlemen’s Beef Association,
+             a contractor to the Beef Checkoff, recently conducted research on consumer preferences for burgers when dining out. Consumers’ own words highlight just how enticing burgers are for them. 
+            <span style="color:red">Read more....</span></p>
+            <div class="container mt-4">
+                <h3>Related Product</h3>
+                <div class="row">
+                  <div class="col-md-3" *ngFor="let product of relatedProducts">
+                    <div class="card">
+                      <img [src]="product.image" class="card-img-tops" alt="{{ product.name }}">
+                      <div class="card-body" style="font-weight: 600; text-align: center">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p>₹{{ product.price }}</p>
+                        <button class="btn addToCart m-2" (click)="addToCart(product)">Add to Cart</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+   
+  </div>

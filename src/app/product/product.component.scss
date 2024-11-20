@@ -1,0 +1,46 @@
+.prd-card{
+    text-align: center;
+    font-weight: 600;
+    border-color:  rgb(232, 232, 58) !important;
+    height: 300px;
+    width: 450px;
+}
+.card-img-top{
+    height:298px;
+}
+
+.addToCart{
+    background: rgb(232, 232, 58);
+    font-weight: 600;
+}
+
+.card-img-tops{
+ height: 230px;
+}
+
+.view-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.6); 
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      
+      .view-icon i {
+        font-size: 15px;
+        color: red; 
+      }
+      .quantity{
+        width: 76px;
+        background: rgb(232, 232, 58);
+        border: 3px;
+      }
+      .quantity span{
+        margin: 10px 4px;
+        cursor: pointer;
+      }
+      p{
+        margin-bottom: 0rem;
+      }

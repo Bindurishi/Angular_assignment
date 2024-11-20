@@ -1,0 +1,35 @@
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <i class="fas fa-bars"></i>
+        <a class="navbar-brand" href="#">Burger Queen</a>
+        <div class="collapse navbar-collapse" id="navbarNav"></div>
+        <div class="header-actions me-3">
+          <i class="fa fa-bell" aria-hidden="true" style="position: relative;">
+            <span class="notification">5</span>
+          </i>
+          <span class="fa fa-power-off"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <footer class="footer bg-light text-center py-3">
+    <div class="footer-icons">
+      <a class="nav-link" routerLink="/">
+        <i class="fas fa-home"></i>
+      </a>
+      <i class="fa-solid fa-table-cells-large"></i>
+      <i class="fa-brands fa-safari"></i>
+      <a class="nav-link" routerLink="/cart">
+        <i class="fa-solid fa-cart-shopping " style="position: relative;"><span class="notification">{{ cartLength }}</span></i>
+      </a>
+      <i class="fas fa-user"></i>
+    </div>
+  </footer>
+  
